@@ -23,21 +23,21 @@
 // function minCheck(num) {
 //     let  message = ""
 //     if (num > 0 && num <= 15) {
-//       message = "Перша частина";  
+//       message = "Перша частина";
 //     }
 //     else if (num > 15 && num <= 30) {
-//         message = "Друга частина";  
+//         message = "Друга частина";
 //     }
 //     else if (num > 30 && num <= 45) {
-//       message = "Третя частина";    
+//       message = "Третя частина";
 //     }
 //     else if (num > 45 && num <= 60) {
-//       message = "Четверта частина";   
+//       message = "Четверта частина";
 //     }
 //     else {
-//          message = "Невірна частина"; 
+//          message = "Невірна частина";
 //     }
-//     return message;   
+//     return message;
 // }
 // console.log(minCheck (min)) ;
 
@@ -46,43 +46,46 @@
 
 // Генерація випадкового числа
 
-let min = parseInt(prompt('Введіть мінімальне значення:'));
-let max = parseInt(prompt('Введіть максимальне значення:'));
+// let min = parseInt(prompt('Введіть мінімальне значення:'));
+// let max = parseInt(prompt('Введіть максимальне значення:'));
 
-const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+// const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
 
+// function inputMinMax(){
+//   min = parseInt(prompt('Введіть мінімальне значення:'));
+//   max = parseInt(prompt('Введіть максимальне значення:'));
+// }
 
-function inputMinMax(){
-  min = parseInt(prompt('Введіть мінімальне значення:'));
-  max = parseInt(prompt('Введіть максимальне значення:'));
-}
-
-
-
-function inputRandomNumber(a, b) {
-  if(isNaN(a) || isNaN(b)){
-   alert('Будь ласка, введіть числа.');
-   return inputMinMax();}
-   if(b<a){
-    alert('Мінімальне значення повинно бути менше максимального.');
-   return inputMinMax();
-   }
-   else {
-    alert(`Випадкове число в діапазоні від мінімального до максимального : ${randomNum}`)
-   }
-}
-inputRandomNumber(min, max);
+// function inputRandomNumber(a, b) {
+//   if(isNaN(a) || isNaN(b)){
+//    alert('Будь ласка, введіть числа.');
+//    return inputMinMax();}
+//    if(b<a){
+//     alert('Мінімальне значення повинно бути менше максимального.');
+//    return inputMinMax();
+//    }
+//    else {
+//     alert(`Випадкове число в діапазоні від мінімального до максимального : ${randomNum}`)
+//    }
+// }
+// inputRandomNumber(min, max);
 
 //* Тернарний оператор
 
 //TODO: 4 ===================================
 // Перевірити, чи є введене користувачем число парним чи непарним, і вивести відповідне повідомлення. Використай promt і виведи повідомлення в alert. (використати тернарний оператор)
 
+// const number = 7;
+
+// function checkNumber(a) {
+//   return a % 2 === 0 ? true : false;
+// }
+// console.log(checkNumber(number));
 //TODO: 5 ===================================
 // Перепишіть if..else на тернарний оператор, за допомогою декількох операторів '?'.
 
-// const login = 'Директор';
-// let message = '';
+const login = "Директор";
+let message = "";
 
 // if (login === 'Співробітник') {
 //   message = 'Привіт';
@@ -94,7 +97,16 @@ inputRandomNumber(min, max);
 //   message = '';
 // }
 
-// console.log(message);
+message =
+  login === "Співробітник"
+    ? "Привіт"
+    : login == "Директор"
+    ? "Вітаю"
+    : login == ""
+    ? "Немає логіну"
+    : "";
+
+console.log(message);
 
 //* Цикл while and do while
 //TODO: 6 ===================================
