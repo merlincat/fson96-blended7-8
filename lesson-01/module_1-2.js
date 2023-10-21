@@ -4,6 +4,17 @@
 // Перевірте, що першим символом цього рядка є буква 'a'.
 // Якщо це так - виведіть 'так', інакше виведіть 'ні'.
 
+// const string = " abcdE ";
+// function checkString(string) {
+//   if (string[2] === "c") {
+//     return true;
+//   } else {
+//     return false;
+//   }
+//   return string.trim().toLowerCase().endsWith("e");
+// }
+// console.log(checkString(string));
+
 //TODO: 2 ===================================
 // У змінній min лежить число від 0 до 60. Визначте у котру чверть години
 // Попадає це число (у першу, другу, третю або четверту). Виведіть значення у консоль, або alert
