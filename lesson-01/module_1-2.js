@@ -97,26 +97,41 @@ let message = "";
 //   message = '';
 // }
 
-message =
-  login === "Співробітник"
-    ? "Привіт"
-    : login == "Директор"
-    ? "Вітаю"
-    : login == ""
-    ? "Немає логіну"
-    : "";
+// message =
+//   login === "Співробітник"
+//     ? "Привіт"
+//     : login == "Директор"
+//     ? "Вітаю"
+//     : login == ""
+//     ? "Немає логіну"
+//     : "";
 
-console.log(message);
+// console.log(message);
 
 //* Цикл while and do while
 //TODO: 6 ===================================
 // скористаємося циклом while та виведіть у консоль числа від 0 до 50
+
+// let i = 0;
+
+// while (i <= 1000) {
+//   console.log(i);
+//   i += 1;
+// }
 
 //TODO: 7 ===================================
 //  Дано число n = 1000.
 //  Ділить його на 2 стільки разів, поки результат поділу не стане менше 50.
 //  Яке число вийде?
 //  Порахуйте кількість ітерацій, необхідних для цього, та запишіть його в змінну num.
+
+// let n = 1000;
+// let num = 0;
+
+// while (n / 2 >= 50) {
+//   num += 1;
+//   n /= 2;
+// }
 
 // console.log(`Кількість ітерацій: ${num}. Чило після ділення: ${n}`);
 
@@ -142,11 +157,31 @@ console.log(message);
 // введе число більше 100, або натисне кнопку
 // скасування в prompt
 
+// let number;
+// do {
+//   number = parseFloat(prompt("Введіть число більше 100"));
+// } while (number < 100);
+// alert(number);
+
 //* Цикл for і директива continue
+
 //TODO: 10 ===================================
 //Напишіть цикл, який виводить у консоль
 // числа від max до min за спаданням
 // Додайте усі парні числа від min до max
+
+// const min = 34;
+// const max = 68;
+// let total = 0;
+
+// for (let index = max; index >= min; index -= 1) {
+//   console.log(index);
+
+//   if (index % 2 !== 0) {
+//     continue;
+//   }
+//   total += index;
+// }
 
 // console.log(`Сума усіх парних: ${total}`);
 
@@ -158,10 +193,31 @@ console.log(message);
 // ****
 // *******
 
+// let star = "*";
+
+// for (let index = 1; index <= 27; index += 1) {
+//   console.log(star);
+//   star += "*";
+// }
+
 //TODO: 12 ===================================
 //Якщо число ділитися на 3 повертати
 //fizz якщо ділитися на 5 повертати buzz
 //Якщо ділитися на 3 і на 5 повернути fizzbuzz
+
+// const num = 30;
+
+// for (let index = 1; index <= num; index += 1) {
+//   if (index % 3 === 0 && index % 5 === 0) {
+//     console.log("fizzbuzz");
+//   } else if (index % 3 === 0) {
+//     console.log("fizz");
+//   } else if (index % 5 === 0) {
+//     console.log("buzz");
+//   } else {
+//     console.log(index);
+//   }
+// }
 
 //* Конструкція switch
 //TODO: 13 ===================================
@@ -169,23 +225,59 @@ console.log(message);
 // значення '1', то у змінну result запишемо 'зима', якщо має значення
 // '2' - 'весна' і так далі. Розв'яжіть завдання через switch-case.
 
-//TODO: 14 ===================================
-// Напишіть if..else, що відповідає наступному switch:
+// let num = 5;
+// let result = "";
 
-// const browser = 'Opera';
-
-// switch (browser) {
-//   case 'Edge':
-//     console.log("You've got the Edge!");
+// switch (num) {
+//   case 1:
+//     result = "зима";
 //     break;
-
-//   case 'Chrome':
-//   case 'Firefox':
-//   case 'Safari':
-//   case 'Opera':
-//     console.log('Okay we support these browsers too');
+//   case 2:
+//     result = "весна";
+//     break;
+//   case 3:
+//     result = "літо";
+//     break;
+//   case 4:
+//     result = "осінь";
 //     break;
 
 //   default:
-//     console.log('We hope that this page looks ok!');
+//     result = "Такої пори року не існує";
+//     break;
+// }
+// console.log(result);
+
+//TODO: 14 ===================================
+// Напишіть if..else, що відповідає наступному switch:
+
+// const browser = "Opera";
+
+// if (browser === "Edge") {
+//   console.log("You've got the Edge!");
+// } else if (
+//   browser === "Chrome" ||
+//   browser === "Firefox" ||
+//   browser === "Safari" ||
+//   browser === "Opera"
+// ) {
+//   console.log("Okay we support these browsers too");
+// } else {
+//   console.log("We hope that this page looks ok!");
+// }
+
+// switch (browser) {
+//   case "Edge":
+//     console.log("You've got the Edge!");
+//     break;
+
+//   case "Chrome":
+//   case "Firefox":
+//   case "Safari":
+//   case "Opera":
+//     console.log("Okay we support these browsers too");
+//     break;
+
+//   default:
+//     console.log("We hope that this page looks ok!");
 // }
