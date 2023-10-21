@@ -19,36 +19,59 @@
 // У змінній min лежить число від 0 до 60. Визначте у котру чверть години
 // Попадає це число (у першу, другу, третю або четверту). Виведіть значення у консоль, або alert
 
-const min = -1;
-function minCheck(num) {
-    let  message = ""
-    if (num > 0 && num <= 15) {
-      message = "Перша частина";  
-    }
-    else if (num > 15 && num <= 30) {
-        message = "Друга частина";  
-    }
-    else if (num > 30 && num <= 45) {
-      message = "Третя частина";    
-    }
-    else if (num > 45 && num <= 60) {
-      message = "Четверта частина";   
-    }
-    else {
-         message = "Невірна частина"; 
-    }
-    return message;   
-}
-console.log(minCheck (min)) ;
+// const min = -1;
+// function minCheck(num) {
+//     let  message = ""
+//     if (num > 0 && num <= 15) {
+//       message = "Перша частина";  
+//     }
+//     else if (num > 15 && num <= 30) {
+//         message = "Друга частина";  
+//     }
+//     else if (num > 30 && num <= 45) {
+//       message = "Третя частина";    
+//     }
+//     else if (num > 45 && num <= 60) {
+//       message = "Четверта частина";   
+//     }
+//     else {
+//          message = "Невірна частина"; 
+//     }
+//     return message;   
+// }
+// console.log(minCheck (min)) ;
 
 //TODO: 3 ===================================
 // Напиши скрипт, який отримує мінімальне та максимальне значення від користувача через prompt. Зроби перевірку, що користувач передає саме числа, якщо користувач водить не числа виведіть в консоль 'Будь ласка, введіть числа.' Також додайте перевірку, щоб користувач не зміг ввести мінімальне число > за максимальне, якщо це сталось виведи у косоль повідомлення 'Мінімальне значення повинно бути менше максимального.'. У падку правильного ввода данних виведи у консоль рядок  "Випадкове число в діапазоні від мінімального до максимального : ("рандомне число")"
 
 // Генерація випадкового числа
-// const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
 
-// const min = parseInt(prompt('Введіть мінімальне значення:'));
-// const max = parseInt(prompt('Введіть максимальне значення:'));
+let min = parseInt(prompt('Введіть мінімальне значення:'));
+let max = parseInt(prompt('Введіть максимальне значення:'));
+
+const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+
+
+function inputMinMax(){
+  min = parseInt(prompt('Введіть мінімальне значення:'));
+  max = parseInt(prompt('Введіть максимальне значення:'));
+}
+
+
+
+function inputRandomNumber(a, b) {
+  if(isNaN(a) || isNaN(b)){
+   alert('Будь ласка, введіть числа.');
+   return inputMinMax();}
+   if(b<a){
+    alert('Мінімальне значення повинно бути менше максимального.');
+   return inputMinMax();
+   }
+   else {
+    alert(`Випадкове число в діапазоні від мінімального до максимального : ${randomNum}`)
+   }
+}
+inputRandomNumber(min, max);
 
 //* Тернарний оператор
 
