@@ -97,7 +97,7 @@
 //  const str = "This is a new line";
  
 //  function countVowels(string) {
-//      const vowels = ["a", "e", "i", "o", "u"]; 
+//      const vowels = ["a", "e", "i", "o", "u"];
 //      let count = 0;
 //      for (const leter of string) {
 //          count += vowels.includes(leter) ? 1 : 0;
@@ -116,8 +116,37 @@
 // 1 додати поле mood зі значенням 'happy'
 // 2 замінити hobby на 'skydiving'
 
+// const human = {
+//     name: "Oleh",
+//     hobby: "sky",
+//     age: 18,
+//     greet() {
+//         return `Hello ${this.name}`;
+//     }
+// }
+
+// const key = "mood";
+
+// human[key] = "happy";
+// human.hobby = "skydiving";
+
+// console.log(human);
+// const user = Object.create(human);
+// user.name = "Dima";
+
+// console.log(user.greet());
 //TODO:============task-2==============================================
 // Створіть об'єкт "прямокутник" з властивостями "довжина" та "ширина". Напишіть метод "calculateArea", який буде обчислювати площу прямокутника на основі його довжини та ширини.
+
+// const square = {
+//     hight: 15,
+//     width: 30,
+//     calculateArea() {
+//         return this.hight * this.width;
+//     }
+// }
+
+// console.log(square.calculateArea());
 
 // console.log(square.calculateArea());
 
