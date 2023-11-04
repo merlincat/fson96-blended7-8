@@ -162,9 +162,21 @@
 // console.log(store.hasProduct("apple"));
 
 //TODO:============task-4==============================================
-// 4. Створіть об'єкт "кошик" зі списком товарів та їх цін. Напишіть метод "calculateTotal", який буде обчислювати загальну суму товарів у кошику.
+//4. Створіть об'єкт "кошик" зі списком товарів та їх цін. Напишіть метод "calculateTotal", який буде обчислювати загальну суму товарів у кошику.
 
-// console.log('object :>> ', cart.calculateTotal());
+    const cart = {
+        products: ["apple", "tomato", "banana"],
+        price: [10, 30, 40],   
+        calculateTotal () {
+            let sum = 0;
+            for (const number of this.price) {
+                sum += number;
+                
+            }
+            return sum;
+        }
+    }
+console.log('object :>> ', cart.calculateTotal());
 
 //! Перебір об'єктів: for...in і методи Object.keys|values|entries
 //TODO:============task-5======================================================
