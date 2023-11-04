@@ -167,6 +167,7 @@
 //     const cart = {
 //         products: ["apple", "tomato", "banana"],
 //         price: [10, 30, 40],
+
 //         calculateTotal () {
 //             let sum = 0;
 //             for (const number of this.price) {
