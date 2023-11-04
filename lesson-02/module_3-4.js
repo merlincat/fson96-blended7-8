@@ -40,21 +40,21 @@
 //яка шукає найменше число в масиві.
 //Додай перевірку що функція отримує масив
 
-    function findSmallerNumber(array) {
-        if (!Array.isArray(array)) {
-            return "It's not array"
-        }
-        let min = array[0];
-        for (const number of array) {
-            if (number < min) {
-                min = number;
-            }
-        }
-        return min;
-    }
- const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
+//     function findSmallerNumber(array) {
+//         if (!Array.isArray(array)) {
+//             return "It's not array"
+//         }
+//         let min = array[0];
+//         for (const number of array) {
+//             if (number < min) {
+//                 min = number;
+//             }
+//         }
+//         return min;
+//     }
+//  const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
 
-console.log(findSmallerNumber(numbers)); // 2
+// console.log(findSmallerNumber(numbers)); // 2
 
 //TODO:============task-04==============
 // Напишіть функцію min(a, b), яка повертає
