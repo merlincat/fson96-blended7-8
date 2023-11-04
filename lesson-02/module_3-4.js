@@ -25,7 +25,7 @@
 //TODO:=========task-02=================
 // Перевірити, чи містить масив заданий елемент. Якщо містить, видалити його, якщо ні - додати в кінець масиву.
 // const array = ['JavaScript', 'HTML', 'CSS', 'SS'];
- 
+
 // function a(array) {
 //     const elem = 'SSq';
 //     const index = array.indexOf(elem);
@@ -61,12 +61,24 @@
 // менше з чисел a, b
 // Потрібно додати перевірку, що функція отримує числа
 
-// console.log(result); // 5
+// function min(a, b) {
+//   if (typeof a !== "number" || typeof b !== "number") return "ВВедіть число";
+//   return Math.min(a, b);
+// }
+
+// console.log(min(9, 5)); // 5
 
 //TODO:=============task-05=================
 // напиши функцію яка сумуватиме сусідні числа і пушити в новий масив
 
 // const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+// function sumAdjacentNumbers(someArr) {
+//   const newArray = [];
+//   for (let i = 0; i < someArr.length - 1; i += 1) {
+//     newArray.push(someArr[i] + someArr[i + 1]);
+//   }
+//   return newArray;
+// }
 
 // const result = sumAdjacentNumbers(someArr);
 // console.log(result); // [33, 45, 39, 17, 25, 27, 29]
