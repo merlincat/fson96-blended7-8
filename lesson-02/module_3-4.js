@@ -226,16 +226,19 @@
 // Напишіть функцію, яка приймає як параметр об'єкт
 // та формує об'єкти у новому масиві у форматі [key, value]
 
-// const user = {
-//   name: 'John',
+//  const user = {
+//    name: 'John',
 //   surName: 'Stones',
 //   age: 20,
-//   hobby: 'tenis',
-//   haveCar: true,
-//   merried: false,
-// };
+//    hobby: 'tenis',
+//    haveCar: true,
+//    merried: false,
+//  };
+// function changeObject(user) {
+//     return Object.entries(user)
 
-// changeObject(user);
+//    }
+//   console.log(changeObject(user));
 
 //TODO:============task-8======================================================
 // Створіть функцію multiplyNumeric(obj),
@@ -245,9 +248,18 @@
 // let menu = {
 //   width: 200,
 //   height: 300,
-//   title: 'My menu',
+//   title: "My menu",
 // };
+// function multiplyNumeric(obj) {
+//   for (const key in obj) {
+//     if (typeof obj[key] !== "number") {
+//       continue;
+//     }
 
+//     obj[key] *= 2;
+//   }
+//   return obj;
+// }
 // console.log(multiplyNumeric(menu));
 
 // після виклику функції
@@ -263,13 +275,21 @@
 // Напишіть функцію "findTopStudent", яка буде повертати об'єкт студента з найвищим середнім балом.
 
 // const students = [
-//   { name: 'Андрій', surname: 'Іванов', grade: 4.5 },
-//   { name: 'Олександр', surname: 'Петров', grade: 3.9 },
-//   { name: 'Марія', surname: 'Сидорова', grade: 4.8 },
-//   { name: 'Ірина', surname: 'Федорова', grade: 4.2 },
+//   { name: "Андрій", surname: "Іванов", grade: 4.5 },
+//   { name: "Олександр", surname: "Петров", grade: 3.9 },
+//   { name: "Марія", surname: "Сидорова", grade: 4 },
+//   { name: "Ірина", surname: "Федорова", grade: 4.8 },
 // ];
-
-// console.log(findTopStudent(students));
+// function findTopStudent(students, value) {
+//   let topStudentArray = [];
+//   for (const student of students) {
+//     if (student.grade >= value) {
+//       topStudentArray.push(student);
+//     }
+//   }
+//   return topStudentArray;
+// }
+// console.log(findTopStudent(students, 4));
 
 //TODO:============task-10==================================================
 // Створіть масив об'єктів "книг" з властивостями "назва", "автор" та "рік видання". Напишіть функцію "findBooksByAuthor",
