@@ -93,11 +93,19 @@
 
 //TODO:=============task-07=================
 // Написати функцію, яка приймає рядок і повертає кількість голосних літер у цьому рядку. `Містить ${count} голосних`
-
-// const str = "This is a new line";
-// const vowels = ["a", "e", "i", "o", "u"];
-
-// console.log(countVowels(str));
+  
+//  const str = "This is a new line";
+ 
+//  function countVowels(string) {
+//      const vowels = ["a", "e", "i", "o", "u"]; 
+//      let count = 0;
+//      for (const leter of string) {
+//          count += vowels.includes(leter) ? 1 : 0;
+         
+//      }
+//      return `Містить ${count} голосних`;
+//   }
+//  console.log(countVowels(str));
 
 //!  Літерал об'єкта
 //!  Властвості та методи об'єкта
