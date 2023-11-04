@@ -93,15 +93,15 @@
 
 //TODO:=============task-07=================
 // Написати функцію, яка приймає рядок і повертає кількість голосних літер у цьому рядку. `Містить ${count} голосних`
-  
+
 //  const str = "This is a new line";
- 
+
 //  function countVowels(string) {
 //      const vowels = ["a", "e", "i", "o", "u"];
 //      let count = 0;
 //      for (const leter of string) {
 //          count += vowels.includes(leter) ? 1 : 0;
-         
+
 //      }
 //      return `Містить ${count} голосних`;
 //   }
@@ -153,7 +153,13 @@
 //TODO:============task-3==============================================
 // Створіть об'єкт "магазин" зі списком товарів. Напишіть метод "hasProduct", який буде перевіряти, чи є певний товар в наявності на складі магазину.
 
-// console.log(store.hasProduct('apple'));
+// const store = {
+//   products: ["apple", "tomato", "banana"],
+//   hasProduct(product) {
+//     return this.products.includes(product);
+//   },
+// };
+// console.log(store.hasProduct("apple"));
 
 //TODO:============task-4==============================================
 // 4. Створіть об'єкт "кошик" зі списком товарів та їх цін. Напишіть метод "calculateTotal", який буде обчислювати загальну суму товарів у кошику.
