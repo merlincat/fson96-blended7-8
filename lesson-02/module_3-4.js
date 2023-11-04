@@ -6,6 +6,22 @@
 // Видалить перший елемент масиву і виведіть його в консоль.
 // Вставте «Реп» і «Реггі» на початок масиву.
 
+// const styles = ["Джаз", "Блюз"];
+// styles.push("Рок-н-рол");
+
+// console.log(styles);
+// const index = styles.indexOf("Блюз");
+// styles[index] = "Класика";
+// // styles[1] = "Класика";
+// console.log(styles.shift());
+// console.log(styles);
+// styles.unshift("Реп", "Реггі");
+// console.log(styles);
+
+// const newArray = [1, 2];
+// const concatArray = styles.concat(newArray);
+// console.log(concatArray);
+
 //TODO:=========task-02=================
 // Перевірити, чи містить масив заданий елемент. Якщо містить, видалити його, якщо ні - додати в кінець масиву.
 //  const array = ['JavaScript', 'HTML', 'CSS', 'SS'];
