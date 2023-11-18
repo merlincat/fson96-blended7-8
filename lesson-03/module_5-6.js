@@ -46,7 +46,10 @@
 //TODO:=========task-01=================
 // Дано масив чисел [1, 2, 3, 4, 5]. Створіть новий масив, що містить квадрати кожного елементу вхідного масиву. Очікуваний результат: [1, 4, 9, 16, 25].
 
-// const res = getNewArray([1, 2, 3], 5);
+// const numbers = [1, 2, 3, 4, 5];
+// const getNewArray = (array, pow) => array.map(element => element**pow);
+
+// const res = getNewArray(numbers, 2);
 // console.log(res);
 
 //TODO:=========task-02=================
@@ -58,6 +61,8 @@
 //   { id: 3, values: [7, 8, 9] },
 // ];
 
+// const flatArray = (array) => array.flatMap(element => element.values);
+
 // const res = flatArray(data);
 // console.log(res);
 
@@ -67,8 +72,10 @@
 // const people = [
 //   { name: 'John', age: 27 },
 //   { name: 'Jane', age: 31 },
-//   { name: 'Bob', age: 19 },
+//   { name: 'Bob', age: 21 },
 // ];
+
+// const checkAge = (array) => array.some(element => element.age < 20);
 
 // const res = checkAge(people);
 // console.log(res);
@@ -78,6 +85,8 @@
 
 // const numbers = [2, 4, 6, 8, 10];
 
+// const checkEvenArray = (array) => array.every(element => element % 2 === 0);
+
 // const res = checkEvenArray(numbers);
 // console.log(res);
 
@@ -86,21 +95,28 @@
 
 // const numbers = [1, 2, 3, 4, 5];
 
-// const res = getNumber(arr, 3);
+// const getNumber = (array, value) => array.find(element => element > value);
+
+// const res = getNumber(numbers, 3);
 // console.log(res);
 
 //TODO:=========task-06=================
 // Відсортуйте масив чисел [4, 2, 5, 1, 3] у порядку зростання. Очікуваний результат: [1, 2, 3, 4, 5].
 
-// const numbersArray = [4, 2, 5, 1, 3];
+// const numbersArray = [4, 200, 1000, 1, 3];
+
+// const sortedArray = (array) => array.toSorted((a, b) => b - a)
 
 // const res = sortedArray(numbersArray);
 // console.log(res);
+// console.log(numbersArray);
 
 //TODO:===============task-07===============================
 // Відсортуйте масив рядків ["banana", "orange", "apple", "pear"] у порядку алфавіту. Очікуваний результат: ["apple", "banana", "orange", "pear"].
 
 // const stringArray = ['banana', 'orange', 'apple', 'pear'];
+
+// const sortedArray = (array) => array.toSorted((a, b) => b.localeCompare(a));
 
 // const res = sortedArray(stringArray);
 // console.log(res);
