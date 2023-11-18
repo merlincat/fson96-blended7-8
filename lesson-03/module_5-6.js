@@ -153,7 +153,7 @@
 
 // const numbers = [1, 2, 3, 4, 5];
 
-// const sum = (array) => array.reduce((acc, num) => acc + num, 0); 
+// const sum = (array) => array.reduce((acc, num) => acc + num, 0);
 
 // const res = sum(numbers);
 // console.log(res);
@@ -172,32 +172,65 @@
 //TODO:=========task-01=================
 // Створити об'єкт, який представляє користувача. У об'єкті повинні бути наступні поля: ім'я, прізвище, вік, email та метод, який виводить повну інформацію про користувача.
 
+const user = {
+  firstName: "John",
+  lastName: "Kovalski",
+  age: 26,
+  email: "john@gmail.com",
+
+  getFullInfo() {
+    console.log(this);
+  },
+  modify(key, value) {
+    if (key !== "firstName" && key !== "lastName") {
+      return "Невірні дані для зміни";
+    }
+    if (value[0] === value[0].toUpperCase() && value.length > 3) {
+      this[key] = value;
+    }
+  },
+};
+// user.getFullInfo();
+
+const newUser = Object.create(user);
+newUser.firstName = "Pablo";
+// newUser.getFullInfo();
+
+// console.log(newUser);
+
 //TODO:=========task-02=================
 // Для обьекта "user", написати метод для зміни ім'я або прізвища(змінити можна лише якесь з цих полів, змінювати або додавати нові потрібно заборонити) з перевіркою на валідність даних(Перша літера має бути у верхньому реєстрі, довжина слова не менше 3 літер)
 
-// user.modify('firstName', 'Vlad');
-
+// console.log(user.modify("firstMeme", "Vlad"));
+// console.log(user);
 //TODO:=========task-03=================
 // Створити глобальну функцію для обьекта "user", що може додавати властивості об'єкту, в контексті якого вона буде викликана. Додати цю функцію як метод об'єкта user, та додати за допомогою неї властивість friends із значенням:
 
-// user.addProperty('friends', [
+// const addProperty = function (key, value) {
+//   this[key] = value;
+// };
+// user.addProperty = addProperty;
+// newUser.addProperty = addProperty;
+// console.log(newUser);
+
+// user.addProperty("friends", [
 //   {
-//     firstName: 'Mary',
-//     lastName: 'Smith',
+//     firstName: "Mary",
+//     lastName: "Smith",
 //     age: 32,
-//     email: 'marysmith@hotmail.com',
+//     email: "marysmith@hotmail.com",
 //   },
 //   {
-//     firstName: 'Alex',
-//     lastName: 'Johnson',
+//     firstName: "Alex",
+//     lastName: "Johnson",
 //     age: 45,
-//     email: 'alex.johnson@yahoo.com',
+//     email: "alex.johnson@yahoo.com",
 //   },
 //   {
-//     firstName: 'Emily',
-//     lastName: 'Davis',
+//     firstName: "Emily",
+//     lastName: "Davis",
 //     age: 19,
-//     email: 'emilydavis@gmail.com',
+//     email: "emilydavis@gmail.com",
 //   },
 // ]);
 
@@ -207,14 +240,24 @@
 //  Викликати метод user.info() таким чином, щоб він вивів результатом  ({name: 'Bob', lactName: 'Lasso',age: 50, email: 'BodLasso@gmail.com'})
 
 // const obj = {
-//   name: 'Bob',
-//   lastName: 'Lasso',
+//   firstName: "Bob",
+//   lastName: "Lasso",
 //   age: 50,
-//   email: 'BodLasso@gmail.com',
+//   email: "BodLasso@gmail.com",
 // };
+// user.getFullInfo.call(obj);
 
 //TODO:=========task-05=================
 //  Викличте функцію showFullName у контексті об'єкта user
+
+// function showFullUser(message, num) {
+//   console.log(
+//     `${message} ${this.firstName} ${this.lastName} you have ${num} apples`
+//   );
+// }
+
+// showFullUser.call(user, "Hello", 10);
+// showFullUser.apply(obj, ["Hi", 5]);//приймає через масив аргументи
 
 //TODO:=========task-06=================
 // Виправте помилки, щоб код працював
@@ -231,7 +274,7 @@
 //   callback();
 // }
 
-// callAction(product.showPrice);
+// callAction(product.showPrice.bind(product));
 
 //! class
 //TODO:=================task-01=============================
@@ -242,6 +285,43 @@
 // - `items` - масив предметів замовлення, де кожен предмет містить ім'я (name) та ціну (price)
 // - `isPaid` - позначає, чи оплачене замовлення (default = false)
 
+// class Order {
+//   #tableNumber;
+//   #items;
+//   #isPaid;
+//   constructor(tableNumber) {
+//     this.#tableNumber = tableNumber;
+//     this.#items = [];
+//     this.#isPaid = false;
+//   }
+//   calculateTotal() {
+//     const totalAmount = this.#items.reduce((acc, num) => acc + num.price, 0);
+// let totalAmount = 0;
+// for (const item of this.#items) {
+//   totalAmount += item.price;
+// }
+//     return totalAmount;
+//   }
+//   markAsPaid() {
+//     this.#isPaid = true;
+//   }
+//   addItem(item) {
+//     this.#items.push(item);
+//   }
+//   removeItem(item) {
+//     return this.#items.filter((elem) => item === elem);
+//   }
+//   set tableNumber(tableNumber) {
+//     this.#tableNumber = tableNumber;
+//   }
+//   get tableNumber() {
+//     return this.#tableNumber;
+//   }
+//   get isPaid() {
+//     return this.#isPaid;
+//   }
+// }
+
 // ##### Для класу Order потрібно реалізувати такі методи:
 // - `calculateTotal`() - повертає загальну суму замовлення.
 // - `markAsPaid`() - позначає замовлення як оплачене
@@ -251,13 +331,21 @@
 
 // #### Також потрібно створити клас `MenuItem`, який містить властивості `name` та `price` для предметів замовлення.
 
+// class MenuItem {
+//   constructor(name, price) {
+//     this.name = name;
+//     this.price = price;
+//   }
+// }
+
 // Create menu items
-// const item1 = new MenuItem('Burger', 10);
-// const item2 = new MenuItem('Fries', 5);
-// const item3 = new MenuItem('Drink', 2);
+// const item1 = new MenuItem("Burger", 10);
+// const item2 = new MenuItem("Fries", 5);
+// const item3 = new MenuItem("Drink", 2);
 
 // Create an order
 // const order = new Order(1);
+// const order1 = new Order(2);
 
 // Add items to the order
 // order.addItem(item1);
@@ -270,3 +358,19 @@
 
 // console.log(`Order for table ${order.tableNumber} - Total: $${total}`);
 // console.log(`Is paid: ${order.isPaid}`);
+// console.log(order);
+
+// ---
+
+// Add items to the order
+// order1.addItem(item3);
+// order1.addItem(item3);
+// order1.addItem(item3);
+
+// Calculate the total and mark the order as paid
+// const total1 = order1.calculateTotal();
+// order1.markAsPaid();
+
+// console.log(`Order for table ${order1.tableNumber} - Total: $${total1}`);
+// console.log(`Is paid: ${order1.isPaid}`);
+// console.log(order);
