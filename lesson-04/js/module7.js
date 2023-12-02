@@ -1,19 +1,19 @@
-const bodyEl = document.querySelector('body')
+const bodyEl = document.querySelector("body");
 // console.log(bodyEl);
 
-const titleEl = document.querySelector('#title')
+const titleEl = document.querySelector("#title");
 // console.log(titleEl);
 
-const listEl = document.querySelector('.list')
+const listEl = document.querySelector(".list");
 // console.log(listEl);
 
-const dataTopicEls = document.querySelectorAll('[data-topic]')
+const dataTopicEls = document.querySelectorAll("[data-topic]");
 // console.log(dataTopicEls);
 // dataTopicEls.forEach(el => {
 //     console.log(el);
 // })
 
-const dataTopicEl = document.querySelector('[data-topic]')
+const dataTopicEl = document.querySelector("[data-topic]");
 // console.log(dataTopicEl);
 // console.log(listEl.firstElementChild);
 // console.log(dataTopicEls[0]);
@@ -23,42 +23,41 @@ const dataTopicEl = document.querySelector('[data-topic]')
 
 // console.log(titleEl.nextElementSibling);
 
-const subTitleEls = document.querySelectorAll('h3')
+const subTitleEls = document.querySelectorAll("h3");
 
 // subTitleEls.forEach(el => {
 //     el.classList.add('active');
 //     el.style.color = 'green';
 // })
 
-const liEl = document.querySelector('[data-topic="navigation"]')
+const liEl = document.querySelector('[data-topic="navigation"]');
 // console.log(liEl);
-liEl.style.backgroundColor = "yellow"
+liEl.style.backgroundColor = "yellow";
 
-liEl.lastElementChild.textContent = "Я змінив тут текст!"
+liEl.lastElementChild.textContent = "Я змінив тут текст!";
 
-const currentTopic = "manipulation"
-const topicEl = document.querySelector(`[data-topic="${currentTopic}"]`)
+const currentTopic = "manipulation";
+const topicEl = document.querySelector(`[data-topic="${currentTopic}"]`);
 // console.log(topicEl);
-topicEl.style.backgroundColor = "blue"
+topicEl.style.backgroundColor = "blue";
 
-
-const compTitleEl = document.querySelector(".completed")
+const compTitleEl = document.querySelector(".completed");
 // console.log(compTitleEl);
-compTitleEl.parentNode.remove()
+compTitleEl.parentNode.remove();
 
-const paragrafEl = document.createElement("p")
-paragrafEl.textContent = "Об'єктна модель документа (Document Object Model)"
+const paragrafEl = document.createElement("p");
+paragrafEl.textContent = "Об'єктна модель документа (Document Object Model)";
 
+titleEl.after(paragrafEl);
 
-titleEl.after(paragrafEl)
-
-const liElement = document.createElement("li")
-const topTitle = document.createElement("h3")
-const pEl = document.createElement("p")
-topTitle.textContent = "Властивість innerHTML"
-pEl.textContent = "Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу"
-liElement.appendChild(topTitle)
-liElement.appendChild(pEl)
+const liElement = document.createElement("li");
+const topTitle = document.createElement("h3");
+const pEl = document.createElement("p");
+topTitle.textContent = "Властивість innerHTML";
+pEl.textContent =
+  "Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу";
+liElement.appendChild(topTitle);
+liElement.appendChild(pEl);
 // listEl.append(liElement)
 
 // listEl.insertAdjacentHTML("beforeend", liElement)
@@ -66,10 +65,10 @@ liElement.appendChild(pEl)
 const markup = `<li>
     <h3>Властивість innerHTML</h3>
     <p>Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу</p>
-</li>`
-listEl.insertAdjacentHTML("beforeend", markup)
+</li>`;
+listEl.insertAdjacentHTML("beforeend", markup);
 
-listEl.innerHTML = ""
+listEl.innerHTML = "";
 
 const pElement = document.createElement("p");
 
@@ -78,15 +77,42 @@ const text = `Об'єктна модель документа Document Object Mo
 const wordsArray = text.split(/\s+/);
 
 for (const word of wordsArray) {
-    console.log(word)
-    if (word.length > 8) {
-        const spanElement = document.createElement ('span');
-        spanElement.style.backgroundColor = "yellow";
-        spanElement.textContent = word + " ";
-        pElement.appendChild(spanElement);
-    } else {
-        pElement.innerHTML += word + " ";
-    }
-
+  // console.log(word)
+  if (word.length > 8) {
+    const spanElement = document.createElement("span");
+    spanElement.style.backgroundColor = "yellow";
+    spanElement.textContent = word + " ";
+    pElement.appendChild(spanElement);
+  } else {
+    pElement.innerHTML += word + " ";
+  }
 }
-listEl.after (pElement);
+listEl.after(pElement);
+
+//////////////////////////////////
+
+const randomNumber = () => Math.floor(Math.random() * 100) + 1;
+
+const blocks = 100;
+
+const divContainerElem = document.createElement("div");
+divContainerElem.classList.add("number-сontainer");
+
+const divArray = [];
+
+for (let i = 0; i < blocks; i++) {
+  const divElem = document.createElement("div");
+  divElem.classList.add("number");
+  divElem.textContent = randomNumber();
+  divElem.textContent % 2 === 0
+    ? divElem.classList.add("even")
+    : divElem.classList.add("odd");
+  divArray.push(divElem);
+}
+
+// console.log(divArray);
+
+divContainerElem.append(...divArray);
+// console.log(divContainerElem);
+
+listEl.after(divContainerElem);
