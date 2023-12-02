@@ -1,3 +1,5 @@
+
+
 //* Розгалуження: if, if...else, else...if
 //TODO: 1 ===================================
 //Даний рядок, що складається із символів, наприклад, 'abcde'.
@@ -84,8 +86,8 @@
 //TODO: 5 ===================================
 // Перепишіть if..else на тернарний оператор, за допомогою декількох операторів '?'.
 
-const login = "Директор";
-let message = "";
+// const login = "Директор";
+// let message = "";
 
 // if (login === 'Співробітник') {
 //   message = 'Привіт';
@@ -281,3 +283,35 @@ let message = "";
 //   default:
 //     console.log("We hope that this page looks ok!");
 // }
+
+// "use strict";
+
+// function showThis() {
+//   console.log("this in showThis: ", this);
+// }
+
+// const user = {
+//   username: "Poly",
+// };
+
+// user.showContext = showThis;
+
+// // Викликаємо в контексті об'єкта
+// user.showContext(); // this in showThis: {username: "Poly", showContext: ƒ}
+
+// // Викликаємо в глобальному контексті
+// showThis(); // "this in showThis: undefined"
+
+use strict;
+const library = {
+	books: 1923,
+	logBookCount() {
+		console.log(this.books);
+	}
+};
+
+function showBooks(callback) {
+	callback()
+}
+
+showBooks(library.logBookCount);
