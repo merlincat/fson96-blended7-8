@@ -22,3 +22,38 @@ listAccordionEl.addEventListener('click', onListAccordionClick);
  * Використовуй поширення подій.Додавай клас`active` на поточну сторінку. Створи допоміжну функцію`updateActivePage`, яка повинна обновляти активний клас.
  * Функція`handleClick`повинна викликатися коли відбувається клік на елементі`pagination`.
  */
+const listPaginationEl = document.querySelector(".js-pagination");
+// const refs = {
+//   listPagination: document.querySelector(".js-pagination"), 
+// }
+const onListPaginationClick = (event) => {
+  if (event.target.nodeName !== 'LI') return;
+  
+  const clickBtn = event.target;
+  const activeBtn = listPaginationEl.querySelector(".active");
+  
+
+  if (clickBtn.dataset.type === "page") {
+    clickBtn.classList.add("active");
+    activeBtn.classList.remove("active");
+  }
+  
+  if (clickBtn.dataset.type === "next") {
+    const nextBtn = activeBtn.nextElementSibling;
+    
+    if (nextBtn.dataset.type === "page") {
+      activeBtn.classList.remove("active");
+      nextBtn.classList.add("active");
+    } 
+  }  
+
+  if (clickBtn.dataset.type === "prev") {
+    const prevBtn = activeBtn.previousElementSibling;
+    
+    if (prevBtn.dataset.type === "page") {
+      activeBtn.classList.remove("active");
+      prevBtn.classList.add("active");
+    } 
+  }  
+}
+listPaginationEl.addEventListener("click", onListPaginationClick);
